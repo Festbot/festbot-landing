@@ -1,0 +1,42 @@
+
+
+.listHeader {
+  margin:0px;
+  padding:0px;
+  
+  color: black;
+ 
+ 
+  display: inline-block;
+}
+
+.subheader {
+  margin-top:20px;
+}
+
+
+.center {
+
+  display: flex;
+  height:500px;
+
+}
+
+
+.headerP{
+  float: right;
+  font-weight: 100;
+  line-height: 49px;
+}
+
+.scrollToTopButton{
+  z-index: 100;
+  background-color: rgba(55, 71, 79, 0.6);
+  color:white;
+  border-radius: 50%;
+  padding: 15px;
+  position: fixed;
+  bottom: 100px !important;
+  right: 30px;
+
+}
