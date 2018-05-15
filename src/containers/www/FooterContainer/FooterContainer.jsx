@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import classes from './FooterContainer.css'
+import { Link } from 'react-router-dom';
+
 import logoSmall from '../../../assets/images/festbot-logo-big-grey-01.png';
 import facebookLogo from '../../../assets/images/facebook.svg'
 import instagramLogo from '../../../assets/images/instagram.svg'
 import messengerLogo from '../../../assets/images/messenger.svg'
+
+
 
 export class FooterContainer extends Component {
   state={
@@ -66,7 +70,7 @@ export class FooterContainer extends Component {
             <div className={classes.socialLinks}><img  style={{width:"50px",color:"#444444"}} src={facebookLogo}/><img style={{width:"50px",color:"#444444"}} src={instagramLogo}/><img style={{width:"50px",color:"#444444"}} src={messengerLogo}/></div>
             <div className={classes.footerLinkGroup}>
               <div className={classes.footerLink}>Contact</div>
-              <div className={classes.footerLink}>Partner</div>
+              <div className={classes.footerLink}><Link to='/partner'>Partner</Link></div>
               <div className={classes.footerLink}>Terms</div>
               <div className={classes.footerLink}>Press</div>
             </div>

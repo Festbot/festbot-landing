@@ -3,9 +3,9 @@ import { Switch, Route, Link } from 'react-router-dom';
 
 import Aux from './hoc/Aux/Aux.jsx';
 import Layout from './hoc/Layout/Layout.jsx';
-import MusicFestivalWebViewLayout from './hoc/Layout/MusicFestivalWebviewLayout.jsx';
+
 import classes from './App.css';
-import FestbotBrowserContainer from './containers/webview/FestbotBrowserContainer/FestbotBrowserContainer.jsx';
+
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
