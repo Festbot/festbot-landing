@@ -28,7 +28,7 @@ import md5 from 'md5';
 import { Tabs, Tab } from 'material-ui/Tabs';
 // From https://github.com/oliviertassinari/react-swipeable-views
 import SwipeableViews from 'react-swipeable-views';
-import ScrollToTop from 'react-scroll-up'
+import ScrollToTop from 'react-scroll-up';
 
 export class DiscoverContainer extends Component {
 	state = {
@@ -38,16 +38,14 @@ export class DiscoverContainer extends Component {
 		yListOffset: 0,
 		activeDetails: '',
 		slideIndex: 0,
-		lastOpenedDetailsHeight:0,
-		lastOpenedDetailsKey:0,
+		lastOpenedDetailsHeight: 0,
+		lastOpenedDetailsKey: 0
 	};
 
 	async componentDidMount() {
 		this.props.onViewChange('hide');
 
-		let { data } = await axios.get(
-			'https://api.festbot.com/artists/_design/default/_list/json/default-view'
-		);
+		let { data } = await axios.get('https://api.festbot.com/artists/_design/default/_list/json/default-view');
 		//console.log(data)
 
 		this.setState({ searchResults: data, data: data });
@@ -101,10 +99,7 @@ export class DiscoverContainer extends Component {
 
 	matchingArtists = () => {
 		const filteredResults = this.state.data.filter(artist => {
-			return (
-				Ramda.intersection(this.props.userData.topGenres, artist.genres)
-					.length > 0
-			);
+			return Ramda.intersection(this.props.userData.topGenres, artist.genres).length > 0;
 		});
 
 		console.log('Match GENRES LIST:', filteredResults);
@@ -133,18 +128,16 @@ export class DiscoverContainer extends Component {
 
 	detailsIsOpenHandler = e => {
 		if (this.state.activeDetails === e.currentTarget.id) {
-			this.setState({ activeDetails: '', isOpenDetails: false,lastOpenedDetailsHeight: 0 });
-			
+			this.setState({ activeDetails: '', isOpenDetails: false, lastOpenedDetailsHeight: 0 });
 		} else {
 			this.setState({
 				activeDetails: e.currentTarget.id,
 				isOpenDetails: true
 			});
 			//document elmaszas nyitas csukas miatt
-			const lastOpenedDetaisWasBeforeThis = Number(this.state.lastOpenedDetailsKey)< Number(e.currentTarget.title)
-			this.initLastOpenedDetailsHeight(this.state.lastOpenedDetailsHeight, lastOpenedDetaisWasBeforeThis)
-			this.setState({lastOpenedDetailsKey:e.currentTarget.title});
-
+			const lastOpenedDetaisWasBeforeThis = Number(this.state.lastOpenedDetailsKey) < Number(e.currentTarget.title);
+			this.initLastOpenedDetailsHeight(this.state.lastOpenedDetailsHeight, lastOpenedDetaisWasBeforeThis);
+			this.setState({ lastOpenedDetailsKey: e.currentTarget.title });
 		}
 	};
 
@@ -153,9 +146,7 @@ export class DiscoverContainer extends Component {
 			return (
 				artist.name.toLowerCase().indexOf(keyword.toLowerCase()) > -1 ||
 				artist.genres.filter(genres => {
-					return (
-						genres.toLowerCase().indexOf(keyword.toLowerCase()) > -1
-					);
+					return genres.toLowerCase().indexOf(keyword.toLowerCase()) > -1;
 				}).length > 0
 			);
 		});
@@ -180,24 +171,19 @@ export class DiscoverContainer extends Component {
 		}
 	};
 
-	setLastOpenedDetailsHeight = (e) => {
-		this.setState({lastOpenedDetailsHeight: e});
-	}
+	setLastOpenedDetailsHeight = e => {
+		this.setState({ lastOpenedDetailsHeight: e });
+	};
 
-	initLastOpenedDetailsHeight =(lastOpenedDetailsHeight,lastOpenedDetaisWasBeforeThis) =>{
-		if (lastOpenedDetailsHeight>0 && lastOpenedDetaisWasBeforeThis) {
-			window.scrollBy(0,-lastOpenedDetailsHeight)
-			this.setState({lastOpenedDetailsHeight: 0});
+	initLastOpenedDetailsHeight = (lastOpenedDetailsHeight, lastOpenedDetaisWasBeforeThis) => {
+		if (lastOpenedDetailsHeight > 0 && lastOpenedDetaisWasBeforeThis) {
+			window.scrollBy(0, -lastOpenedDetailsHeight);
+			this.setState({ lastOpenedDetailsHeight: 0 });
 		}
-	}
+	};
 
 	render() {
-		
-
-		const sliceOfArtist = this.state.searchResults.slice(
-			this.state.yListOffset,
-			this.state.yListOffset + 400
-		);
+		const sliceOfArtist = this.state.searchResults.slice(this.state.yListOffset, this.state.yListOffset + 400);
 		const artistList = sliceOfArtist.map((artist, index) => {
 			return (
 				<DiscoverArtistItem
@@ -218,10 +204,7 @@ export class DiscoverContainer extends Component {
 					<title>Discover Artist</title>
 				</Helmet>
 
-				<SearchBar
-					defaultValue={this.props.match.params.artist_name}
-					searchQueryChanged={this.artistKeywordFilter}
-				/>
+				<SearchBar defaultValue={this.props.match.params.artist_name} searchQueryChanged={this.artistKeywordFilter} />
 				{artistList}
 				<ScrollToTop showUnder={1000}>
 					<span className={classes.scrollToTopButton}>UP</span>
@@ -248,9 +231,11 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
 	return {
 		setUser: userData => dispatch({ type: 'SET_USER', value: userData }),
-		onViewChange: actualViewMenu =>
-			dispatch({ type: 'UPD_MENU', value: actualViewMenu })
+		onViewChange: actualViewMenu => dispatch({ type: 'UPD_MENU', value: actualViewMenu })
 	};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DiscoverContainer);
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(DiscoverContainer);

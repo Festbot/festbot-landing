@@ -1,54 +1,54 @@
 .App {
-  text-align: center;
-  font-family: 'Lato', sans-serif!important;
+	text-align: center;
+	font-family: 'Lato', sans-serif !important;
 }
 
-body{
- 
+body {
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+	animation: App-logo-spin infinite 20s linear;
+	height: 80px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+	background-color: #222;
+	height: 150px;
+	padding: 20px;
+	color: white;
 }
 
 .App-title {
-  font-size: 1.5em;
+	font-size: 1.5em;
 }
 
 .App-intro {
-  font-size: large;
+	font-size: large;
 }
 
-h1 { 
-  font-weight: 100;
-  font-size: 140% !important;
-  line-height: 0;
-
+h1 {
+	font-weight: 100;
+	font-size: 140% !important;
+	line-height: 0;
 }
 
-h2 { 
-  font-weight: 100;
-  font-size: 120% !important;
-  line-height: 0;
-
+h2 {
+	font-weight: 100;
+	font-size: 120% !important;
+	line-height: 0;
 }
 
-p  {
-  font-weight: 100!important;
-  font-size: 80% !important;
-  line-height: 170%;
+p {
+	font-weight: 100 !important;
+	font-size: 80% !important;
+	line-height: 170%;
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
-
