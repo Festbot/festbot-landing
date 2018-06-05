@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import MobileMenu from './MobileMenu.jsx'
-
+import * as T from '../../helpers/i18n.js';
 
 import classes from './MenuBar.css';
 
@@ -10,11 +10,11 @@ export class MenuBar extends Component {
 		return (
 			<div className={classes.menuContainer}>
 				
-					<Link to='/' className={classes.menuItem}>Home</Link>
-					<Link to='#features' className={classes.menuItem}>Features</Link>
-					<Link to='/artist_browser' className={classes.menuItem}>Artist Browser</Link>
-					<Link to='/festival_catalog' className={classes.menuItem}>Festival Catalog</Link>
-					<Link to='/partner' className={classes.partner}>Partner</Link>
+					<Link to='/' className={classes.menuItem}>{T.translate("Home")}</Link>
+					<Link to='#features' className={classes.menuItem}>{T.translate("Features")}</Link>
+					<Link to='/artist' className={classes.menuItem}>{T.translate("Artist Browser")}</Link>
+					<Link to='/festival_catalog' className={classes.menuItem}>{T.translate("Festival Catalog")}</Link>
+					<Link to='/partner' className={classes.partner}>{T.translate("Partner")}</Link>
 				<MobileMenu/>
 			</div>
 		);

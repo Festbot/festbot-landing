@@ -23,7 +23,7 @@ const layout = props => {
       </Helmet>
       
       <NavBar/>
-      <main >{props.children}</main>
+      <main style={{zIndex:"10"}} >{props.children}</main>
       <FooterContainer backgroundColor="rgb(203, 217, 224)"/>
 
 

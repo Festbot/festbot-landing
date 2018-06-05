@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import classes from './LandingPageContainer.css';
+import * as T from '../../../helpers/i18n.js';
 import Hero from '../hero/HeroContainer.jsx';
 import ContentBlockContainer from '../../../hoc/ui/ContentBlockContainer.jsx';
 import ContentBlockImage from '../ContentBlock/ContentBlockImage.jsx';
@@ -10,15 +11,17 @@ import HighlightsContainer from '../Highlights/HighlightsContainer.jsx';
 
 import VisibiltyControl from '../../../hoc/VisibilityControl/VisibilityControl.jsx';
 
+
+
 export class LandingPageContainer extends Component {
 	render() {
 		return (
 			<div className={classes.contentContainer}>
 				<VisibiltyControl effect="fade">
           <Hero 
-            title="Get the most out of the festival season"
-            subtitle="Festbot is your best personal assistant for festivals"
-            buttonText="Get Started"
+            title={T.translate("Get the most out of the festival season")}
+            subtitle={T.translate("Festbot is your best personal assistant for festivals")}
+            buttonText={T.translate("Get Started")} 
             buttonColor="#0099E5"
             imgUrl="http://festbot.com/assets/image/splash.jpg"
             height="700px"
@@ -26,7 +29,7 @@ export class LandingPageContainer extends Component {
 				</VisibiltyControl>
 
 				<VisibiltyControl effect="fade" always={true}>
-					<ContentBlockContainer backgroundColor="white">
+					<ContentBlockContainer backgroundColor="white" imageUrl="http://festbot.com/assets/image/background-mascot-01.png">
 						<ContentBlockWrapper>
 							<VisibiltyControl effect="zoom" always={true}>
                 <ContentBlockImage 
@@ -38,8 +41,8 @@ export class LandingPageContainer extends Component {
 							<VisibiltyControl effect="right" always={true}>
 								<ContentBlockText
 									alignDirection="left"
-									title="Plan your festival"
-									description="Browse the festival catalog. Check the tour locations of your favourite Artist. Listen their best relases, and save the event to your festival calendar with Festbot."
+									title={T.translate("Plan your festival")}
+									description={T.translate("Browse the festival catalog. Check the tour locations of your favourite Artist. Listen their best relases, and save the event to your festival calendar with Festbot.")}
 								/>
 							</VisibiltyControl>
 						</ContentBlockWrapper>
@@ -52,8 +55,8 @@ export class LandingPageContainer extends Component {
 							<VisibiltyControl effect="left" always={true}>
 								<ContentBlockText
 									alignDirection="right"
-									title="Take your personal assistant with you"
-									description="Check your upcoming events with Festbot. Ask for useful informations during the show, eg. where to find Mexican food, lockers, toilets nearby."
+									title={T.translate("Take your personal assistant with you")}
+									description={T.translate("Check your upcoming events with Festbot. Ask for useful informations during the show, eg. where to find Mexican food, lockers, toilets nearby.")}
 								/>
 							</VisibiltyControl>
 						</ContentBlockWrapper>
@@ -68,7 +71,7 @@ export class LandingPageContainer extends Component {
 				</VisibiltyControl>
 
 				<VisibiltyControl effect="fade" always={true}>
-					<ContentBlockContainer backgroundColor="white">
+					<ContentBlockContainer backgroundColor="white" imageUrl="http://festbot.com/assets/image/background-mascot-party-01.png">
 						<ContentBlockWrapper>
 							<VisibiltyControl effect="zoom" always={true}>
               <ContentBlockImage 
@@ -80,8 +83,8 @@ export class LandingPageContainer extends Component {
 							<VisibiltyControl effect="right" always={true}>
 								<ContentBlockText
 									alignDirection="left"
-									title="Meet new people"
-									description="Festbot will help you to connect with others. Have fun, enjoy an event together, drink a beer or just walk around. You can choose from many options, and maybe you will find love."
+									title={T.translate("Meet new people")}
+									description={T.translate("Festbot will help you to connect with others. Have fun, enjoy an event together, drink a beer or just walk around. You can choose from many options, and maybe you will find love.")}
 								/>
 							</VisibiltyControl>
 						</ContentBlockWrapper>
@@ -93,22 +96,22 @@ export class LandingPageContainer extends Component {
 						<VisibiltyControl effect="zoom" always={true}>
 							<HighlightsBlock
 								alignDirection="left"
-								title="It's free"
-								description="Festbot is free, easy to start. Click on the Get Started button or search for Festbot at Messenger."
+								title={T.translate("It's free")}
+								description={T.translate("Festbot is free, easy to start. Click on the Get Started button or search for Festbot at Messenger.")}
 							/>
 						</VisibiltyControl>
 						<VisibiltyControl effect="zoom" always={true}>
 							<HighlightsBlock
 								alignDirection="left"
-								title="No app download"
-								description="Festbot is working on the Messenger Platform as a converstaion thread. Just say Hi to Festbot, that's all."
+								title={T.translate("No app download")}
+								description={T.translate("Festbot is working on the Messenger Platform as a converstaion thread. Just say Hi to Festbot, that's all.")}
 							/>
 						</VisibiltyControl>
 						<VisibiltyControl effect="zoom" always={true}>
 							<HighlightsBlock
 								alignDirection="left"
-								title="It is for you"
-								description="Festbot is learning and collecting the information what suits you the best."
+								title={T.translate("It is for you")}
+								description={T.translate("Festbot is learning and collecting the information what suits you the best.")}
 							/>
 						</VisibiltyControl>
 					</HighlightsContainer>
