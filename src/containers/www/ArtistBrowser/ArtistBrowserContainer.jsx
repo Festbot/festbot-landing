@@ -13,18 +13,9 @@ import VisibiltyControl from '../../../hoc/VisibilityControl/VisibilityControl.j
 export class ArtistBrowserContainer extends Component {
 	render() {
 		return (
-      <div className={classes.contentContainer}>
-      
-      <div className={classes.highlightCarousel}>
-      sdfghjklkjhgfdsdfghjk
-      </div>
-
-      Browser Searchbar
-      
-      Highlight Carousel
-      
-      Artist list
-
+			<div className={classes.contentContainer}>
+				<div className={classes.highlightCarousel}>sdfghjklkjhgfdsdfghjk</div>
+				Browser Searchbar Highlight Carousel Artist list
 			</div>
 		);
 	}

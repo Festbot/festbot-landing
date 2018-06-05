@@ -1,16 +1,16 @@
-.contentContainer{
-  padding-top: 70px;
-  overflow: hidden;
+.contentContainer {
+	padding-top: 70px;
+	overflow: hidden;
 }
 
 .highlightCarousel {
-  height: 900px;
-  width: 30px;
-  background-color: blue;
+	height: 900px;
+	width: 30px;
+	background-color: blue;
 }
 
 @media (max-width: 768px) {
-  .contentContainer {
-    padding-top: 40px;
-  }
+	.contentContainer {
+		padding-top: 40px;
+	}
 }
