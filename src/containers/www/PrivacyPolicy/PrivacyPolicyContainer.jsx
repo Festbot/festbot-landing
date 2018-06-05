@@ -1,210 +1,259 @@
 import React, { Component } from 'react';
 import classes from './PrivacyPolicyContainer.css';
-import Hero from '../hero/HeroContainer.jsx';
-import ContentBlockContainer from '../../../hoc/ui/ContentBlockContainer.jsx';
-import ContentBlockImage from '../ContentBlock/ContentBlockImage.jsx';
-import ContentBlockText from '../ContentBlock/ContentBlockText.jsx';
-import ContentBlockWrapper from '../ContentBlock/ContentBlockWrapper.jsx';
-import HighlightsBlock from '../Highlights/HighlightsBlock.jsx';
-import HighlightsContainer from '../Highlights/HighlightsContainer.jsx';
-import VisibiltyControl from '../../../hoc/VisibilityControl/VisibilityControl.jsx';
 
 export class PrivacyPolicyContainer extends Component {
 	render() {
 		return (
 			<div className={classes.contentContainer}>
-				<VisibiltyControl>
-					<ContentBlockContainer>
-						<ContentBlockWrapper maxWidth="800px">
-							<h1> Privacy policy</h1>
-							<br />
-							<h2>Welcome to Festbot’s Privacy Policy</h2>
-							<br />
-							<p>
-								Hi there, we’re 1data Kft (HU 227 36 529) 245 Kiralyok Street Budapest, 1039, Hungary (“Festbot”) and welcome to our privacy policy. This policy sets out how we handle your personal information if you’re an
-								Festbot user or visitor to our Sites. When we say ‘we’, ‘us’ or ‘Festbot’ it’s because that’s who we are and we own and run the Sites.
-							</p>
-							<p>
-								If we say ‘policy’ we’re talking about this privacy policy. If we say ‘user terms’ we’re talking about the rules for using each of the Sites. The rules vary by product and each product makes them separately
-								available and seeks consent to them separately to this policy.
-							</p>
-							<h4>The type of personal information we collect</h4>
-							<p>We collect certain personal information about visitors and users of our Sites.</p>
-							<p>
-								The most common types of information we collect include things like: user-names, member names, email addresses, IP addresses, other contact details, survey responses, blogs, photos, payment information such
-								as payment agent details, transactional details, tax information, support queries, forum comments, content you direct us to make available on our Sites (such as item descriptions) and web analytics data. We
-								will also collect personal information from job applications (such as, your CV, the application form itself, cover letter and interview notes).
-							</p>
-							<h4>How we collect personal information</h4>
-							<p />
-							<p>
-								We collect personal information directly when you provide it to us, automatically as you navigate through the Sites, or through other people when you use services associated with the Sites. We collect your
-								personal information when you provide it to us when you complete membership registration and buy or provide items or services on our Sites, subscribe to a newsletter, email list, submit feedback, enter a
-								contest, fill out a survey, or send us a communication.
-							</p>
-							<h4>Personal information we collect about you from others</h4>
-							<p>
-								Although we generally collect personal information directly from you, on occasion, we also collect certain categories of personal information about you from other sources. In particular: financial and/or
-								transaction details from payment providers located in the US, UK, and Hungary in order to process a transaction; third party service providers (like Google, Facebook, Apple,Spotify) who are located in the US
-								or UK, which may provide information about you when you link, connect, or login to your account with the third party provider and they send us information such as your registration and profile from that
-								service, this only occurs if you are using Festbot. The information varies and is controlled by that service provider or as authorized by you via your privacy settings at that service provider; and other
-								third party sources/ and or partners from Hungary, US or UK, whereby we receive additional information about you (to the extent permitted by applicable law), such as demographic data or fraud detection
-								information, and combine it with information we have about you. For example, fraud warnings from service providers like identity verification service. We also receive information about you and your activities
-								on and off the Festbot platform through partnerships, or about your experiences and interactions from our partner ad networks. We also receive information about you as a rights holder from our third party
-								authors. For example, information in the form of a model release when your image is used in an item made available on our Sites.
-							</p>
-							<h4>How we use personal information</h4>
-							<p>We will use your personal information:</p>
-							<p>
-								To fulfil a contract, or take steps linked to a contract: in particular, in facilitating and processing transactions that take place on the Sites. Where this is necessary for purposes which are in our, or
-								third parties, legitimate interests. These interests include:
-							</p>
-							<ul>
-								<li className={classes.simpleList}>operating the Sites;</li>
-								<li className={classes.simpleList}>providing you with services described on the Sites;</li>
-								<li className={classes.simpleList}>verifying your identity when you sign in to any of our Sites;</li>
-								<li className={classes.simpleList}>responding to support tickets, and helping facilitate the resolution of any disputes;</li>
-								<li className={classes.simpleList}>updating you with operational news and information about our Sites and services e.g. to notify you about changes to our Sites, website disruptions or security updates;</li>
-								<li className={classes.simpleList}>carrying out technical analysis to determine how to improve the Sites and services we provide;</li>
-								<li className={classes.simpleList}>monitoring activity on the Sites, e.g. to identify potential fraudulent activity and to ensure compliance with the user terms that apply to the Sites;</li>
-								<li className={classes.simpleList}>
-									managing our relationship with you, e.g. by responding to your comments or queries submitted to us on the Sites or asking for your feedback or whether you want to participate in a survey;
-								</li>
-								<li className={classes.simpleList}>managing our legal and operational affairs (including, managing risks relating to content and fraud matters);</li>
-								<li className={classes.simpleList}>training Festbot staff about how to best serve our user community;</li>
-								<li className={classes.simpleList}>improving our products and services.</li>
-								<li className={classes.simpleList}>providing general administrative and performance functions and activities;</li>
-								<li className={classes.simpleList}>and processing your job application to Festbot.</li>
-							</ul>
+				<h1>Privacy Policy of the Festbot Facebook app</h1>
+				<p>Festbot collects some personal data from its users.</p>
+				<h2>Owner and data controller</h2>
+				<p>1data Kft. (HU 227 36 529) 245 Kiralyok Street Budapest, 1039, Hungary</p>
+				<h2>Types of data collected</h2>
+				<p>Among the types of Personal Data that Festbot collects, by itself or through third parties, there are: geographic position, Cookies and Usage Data.</p>
+				<p>
+					Complete details on each type of Personal Data collected are provided in the dedicated sections of this privacy policy or by specific explanation texts displayed prior to the Data collection. Personal Data may be freely
+					provided by the User, or, in case of Usage Data, collected automatically when using Festbot. Unless specified otherwise, all Data requested by Festbot is mandatory and failure to provide this Data may make it impossible
+					for Festbot to provide its services. In cases where Festbot specifically states that some Data is not mandatory, Users are free not to communicate this Data without consequences to the availability or the functioning of
+					the Service. Users who are uncertain about which Personal Data is mandatory are welcome to contact the Owner. Any use of Cookies – or of other tracking tools – by Festbot or by the owners of third-party services used by
+					Festbot serves the purpose of providing the Service required by the User, in addition to any other purposes described in the present document and in the Cookie Policy, if available.
+				</p>
+				<p>Users are responsible for any third-party Personal Data obtained, published or shared through Festbot and confirm that they have the third party's consent to provide the Data to the Owner.</p>
+				<h2>Mode and place of processing the Data</h2>
+				<h3>Methods of processing</h3>
+				<p>
+					The Owner takes appropriate security measures to prevent unauthorized access, disclosure, modification, or unauthorized destruction of the Data. The Data processing is carried out using computers and/or IT enabled tools,
+					following organizational procedures and modes strictly related to the purposes indicated. In addition to the Owner, in some cases, the Data may be accessible to certain types of persons in charge, involved with the
+					operation of Festbot (administration, sales, marketing, legal, system administration) or external parties (such as third-party technical service providers, mail carriers, hosting providers, IT companies, communications
+					agencies) appointed, if necessary, as Data Processors by the Owner. The updated list of these parties may be requested from the Owner at any time.
+				</p>
+				<h3>Legal basis of processing</h3>
+				<p>The Owner may process Personal Data relating to Users if one of the following applies:</p>
+				<ul>
+					<li>
+						Users have given their consent for one or more specific purposes. Note: Under some legislations the Owner may be allowed to process Personal Data until the User objects to such processing (“opt-out”), without having
+						to rely on consent or any other of the following legal bases. This, however, does not apply, whenever the processing of Personal Data is subject to European data protection law;
+					</li>
+					<li>provision of Data is necessary for the performance of an agreement with the User and/or for any pre-contractual obligations thereof;</li>
+					<li>processing is necessary for compliance with a legal obligation to which the Owner is subject;</li>
+					<li>processing is related to a task that is carried out in the public interest or in the exercise of official authority vested in the Owner;</li>
+					<li>processing is necessary for the purposes of the legitimate interests pursued by the Owner or by a third party.</li>
+				</ul>
+				<p>
+					In any case, the Owner will gladly help to clarify the specific legal basis that applies to the processing, and in particular whether the provision of Personal Data is a statutory or contractual requirement, or a
+					requirement necessary to enter into a contract.
+				</p>
+				<h3>Place</h3>
+				<p>The Data is processed at the Owner's operating offices and in any other places where the parties involved in the processing are located.</p>
+				<p>
+					Depending on the User's location, data transfers may involve transferring the User's Data to a country other than their own. To find out more about the place of processing of such transferred Data, Users can check the
+					section containing details about the processing of Personal Data.
+				</p>
+				<p>
+					Users are also entitled to learn about the legal basis of Data transfers to a country outside the European Union or to any international organization governed by public international law or set up by two or more
+					countries, such as the UN, and about the security measures taken by the Owner to safeguard their Data.
+				</p>
+				<p>If any such transfer takes place, Users can find out more by checking the relevant sections of this document or inquire with the Owner using the information provided in the contact section.</p>
+				<h3>Retention time</h3>
+				<p> Personal Data shall be processed and stored for as long as required by the purpose they have been collected for.</p>
+				<p>Therefore:</p>
+				<li>Personal Data collected for purposes related to the performance of a contract between the Owner and the User shall be retained until such contract has been fully performed.</li>
+				<li>
+					Personal Data collected for the purposes of the Owner’s legitimate interests shall be retained as long as needed to fulfill such purposes. Users may find specific information regarding the legitimate interests pursued by
+					the Owner within the relevant sections of this document or by contacting the Owner.
+				</li>
+				<p>
+					The Owner may be allowed to retain Personal Data for a longer period whenever the User has given consent to such processing, as long as such consent is not withdrawn. Furthermore, the Owner may be obliged to retain
+					Personal Data for a longer period whenever required to do so for the performance of a legal obligation or upon order of an authority.
+				</p>
+				<p>
+					Once the retention period expires, Personal Data shall be deleted. Therefore, the right to access, the right to erasure, the right to rectification and the right to data portability cannot be enforced after expiration of
+					the retention period.
+				</p>
+				<h2>The purposes of processing</h2>
+				<p>
+					The Data concerning the User is collected to allow the Owner to provide its Services, as well as for the following purposes: Access to third-party accounts, Location-based interactions, Analytics, Displaying content from
+					external platforms and Hosting and backend infrastructure.
+				</p>
+				<p>Users can find further detailed information about such purposes of processing and about the specific Personal Data used for each purpose in the respective sections of this document.</p>
+				<h2>Facebook permissions asked by Festbot</h2>
+				<p>
+					Festbot may ask for some Facebook permissions allowing it to perform actions with the User's Facebook account and to retrieve information, including Personal Data, from it. This service allows Festbot to connect with the
+					User's account on the Facebook social network, provided by Facebook Inc.
+				</p>
+				<p>For more information about the following permissions, refer to the Facebook permissions documentation and to the Facebook privacy policy.</p>
+				<p>The permissions asked are the following:</p>
+				<h3>Basic information</h3>
+				<p>
+					By default, this includes certain User’s Data such as id, name, picture, gender, and their locale. Certain connections of the User, such as the Friends, are also available. If the User has made more of their Data public,
+					more information will be available.
+				</p>
+				<h2>Detailed information on the processing of Personal Data</h2>
+				<p>Personal Data is collected for the following purposes and using the following services:</p>
+				<h3>Access to third-party accounts</h3>
+				<p>
+					This type of service allows Festbot to access Data from your account on a third-party service and perform actions with it. These services are not activated automatically, but require explicit authorization by the User.
+				</p>
+				<h4>Facebook account access (Festbot)</h4>
+				<p>This service allows Festbot to connect with the User's account on the Facebook social network, provided by Facebook, Inc.</p>
+				<p>Personal Data collected: name and gender.</p>
+				<p>
+					Place of processing: United States –{' '}
+					<a href="https://www.facebook.com/policy.php" target="_blank">
+						Privacy Policy
+					</a>. Privacy Shield participant.
+				</p>
+				<h3>Analytics</h3>
+				<p>The services contained in this section enable the Owner to monitor and analyze web traffic and can be used to keep track of User behavior.</p>
+				<h4>Google Analytics</h4>
+				<p>
+					Google Analytics is a web analysis service provided by Google Inc. (“Google”). Google utilizes the Data collected to track and examine the use of Festbot, to prepare reports on its activities and share them with other
+					Google services.
+				</p>
+				<p>Google may use the Data collected to contextualize and personalize the ads of its own advertising network.</p>
+				<p>Personal Data collected: Cookies and Usage Data.</p>
 
-							<h4>Where you give us consent:</h4>
-							<p>
-								providing you with marketing information about products and services which we feel may interest you; and customising our services and websites, like advertising that appear on the Site – where this involves
-								the use of cookies or similar technologies – in order to provide a more personalised experience. For purposes which are required by law. For the purpose of responding to requests by government, a court of
-								law, or law enforcement authorities conducting an investigation.
-							</p>
-							<h4>When we disclose your personal information</h4>
-							<p>
-								We will disclose personal information to the following recipients: companies that are in the Festbot group which are located in Hungary; authors of any items or services made available to you; subcontractors
-								and service providers who assist us in connection with the ways we use personal information (as set out above), in particular: website hosting providers which are located in Hungary, US, NL and UK; technical
-								and customer support services which are located in Hungary; recruitment agencies which are located in Hungary.
-							</p>
-							<ul>
-								<li className={classes.simpleList}>our professional advisers (lawyers, accountants, financial advisers etc.) which are located in Hungary;</li>
-								<li className={classes.simpleList}>regulators and government authorities in connection with our compliance procedures and obligations;</li>
+				<p>
+					Place of processing: United States –{' '}
+					<a href="https://policies.google.com/privacy" target="_blank">
+						Privacy Policy
+					</a>{' '}
+					– Opt Out. Privacy Shield participant.
+				</p>
 
-								<li className={classes.simpleList}>a third party to respond to requests relating to a criminal investigation or alleged or suspected illegal activity;</li>
-								<li className={classes.simpleList}>a third party, in order to enforce or defend our rights, or to address financial or reputational risks;</li>
-								<li className={classes.simpleList}>a rights holder in relation to an allegation of intellectual property infringement or any other infringement; </li>
-								<li className={classes.simpleList}>and other recipients where we are authorised or required by law to do so.</li>
-							</ul>
+				<h3>Displaying content from external platforms</h3>
+				<p>
+					This type of service allows you to view content hosted on external platforms directly from the pages of Festbot and interact with them. This type of service might still collect web traffic data for the pages where the
+					service is installed, even when Users do not use it.
+				</p>
 
-							<h4>Where we transfer and/or store your personal information</h4>
-							<p>
-								We are based in Hungary so your data will be processed in Hungary and the US. Some of the recipients we have described in section 10 above, and to whom we disclose your personal information, are based outside
-								Hungary in places like Canada, Ireland, Philippines, Poland, Romania, UK, and the US. We do this on the basis of your consent to this policy.In order to protect your information, we take care where possible
-								to work with subcontractors and service providers who we believe maintain an acceptable standard of data security compliance.
-							</p>
-							<h4>How we keep your personal information secure</h4>
-							<p>
-								We store personal information on secure servers that are managed by us and our service providers, and occasionally hard copy files that are kept in a secure location in Hungary, Ireland and the US. Personal
-								information that we store or transmit is protected by security and access controls, including username and password authentication, two-factor authentication, and data encryption where appropriate.
-							</p>
-							<h4>How you can access your personal information</h4>
-							<p>
-								You can access some of the personal information that we collect about you by logging in to your account. You also have the right to make a request to access other personal information we hold about you and to
-								request corrections of any errors in that data. You can also close the account you have with us for any of our Sites at any time. To make an access or correction request, contact our privacy champion using
-								the contact details at the end of this policy.
-							</p>
-							<h4>Marketing Choices regarding your personal information</h4>
-							<p>
-								Where we have your consent to do so (e.g. if you have subscribed to one of our e-mail lists or have indicated that you are interested in receiving offers or information from us), we send you marketing
-								communications by email about products and services that we feel may be of interest to you. You can ‘opt-out’ of such communications if you would prefer not to receive them in the future by using the
-								“unsubscribe” facility provided in the communication itself.
-							</p>
-							<p>
-								You also have choices about cookies, as described below. By modifying your browser preferences, you have the choice to accept all cookies, to be notified when a cookie is set, or to reject all cookies. If you
-								choose to reject cookies some parts of our Sites may not work properly in your case.
-							</p>
-							<h4>Cookies (not the type you eat!) and web analytics</h4>
-							<p>For more information about how we use cookies, web beacons and similar technologies see our cookie policy here and for more general information on cookies, see http://www.allaboutcookies.org.</p>
-							<p>
-								When you visit our Sites, there’s certain information that’s recorded which is generally anonymous information and does not reveal your identity. If you’re logged into your account some of this information
-								could be associated with your account. We’re talking about the following kinds of details:
-							</p>
-							<ul>
-								<li className={classes.simpleList}>your IP address or proxy server IP address’;</li>
-								<li className={classes.simpleList}>the domain name you requested;</li>
-								<li className={classes.simpleList}>the name of your internet service provider is sometimes captured depending on the configuration of your ISP connection;</li>
-								<li className={classes.simpleList}>the date and time of your visit to the website;</li>
-								<li className={classes.simpleList}>the length of your session;</li>
-								<li className={classes.simpleList}>the pages which you have accessed;</li>
-								<li className={classes.simpleList}>the number of times you access our site within any month;</li>
-								<li className={classes.simpleList}>the file URL you look at and information relating to it;</li>
-								<li className={classes.simpleList}>the website which referred you to our Sites; </li>
-								<li className={classes.simpleList}>and the operating system which your computer uses.</li>
-							</ul>
+				<h4>Spotify widget (Spotify AB)</h4>
 
-							<p>
-								Occasionally, we will use third party advertising companies to serve ads based on prior visits to our Sites. For example, if you visit our Sites, you may later see an add for our products and services when
-								you visit a different Site. Read more about your options in our cookie policy.
-							</p>
-							<h4>Information about children</h4>
-							<p>
-								Our Sites are not suitable for children under the age of 16 years, so if you are under 16 we ask that you do not use our Sites or give us your personal information (if you are a young tech wiz, please direct
-								your nearest responsible adult to use the Sites for you!). If you are from 16 to 18 years, you can browse the Sites but you’ll need the supervision of a parent or guardian to become a registered user. It’s
-								the responsibility of parents or guardians to monitor their children’s use of our Sites.
-							</p>
-							<h4>Information you make public or give to others</h4>
-							<p>
-								If you make your personal information available to other people, we can’t control or accept responsibility for the way they will use or manage that data. There are lots of ways that you can find yourself
-								providing information to other people, like when you post a public message on a forum thread, share information via social media, or make contact with another user (such as a third party Author) whether via
-								our Sites or directly via email. Before making your information publicly available or giving your information to anyone else, think carefully. If giving information to another user via our Sites, ask them how
-								they will handle your information. If you’re sharing information via another website, check the privacy policy for that site to understand its information management practices as this privacy policy will not
-								apply.
-							</p>
-							<h4>How long we keep your personal information</h4>
-							<p>
-								We retain your personal information for as long as is necessary to provide the services to you and others, and to comply with our legal obligations. If you no longer want us to use your personal information
-								or to provide you with the Festbot services, you can request that we erase your personal information and close your Festbot account. Please note that if you request the erasure of your personal information we
-								will retain information from deleted accounts as necessary for our legitimate business interests, to comply with the law, prevent fraud, collect fees, resolve disputes, troubleshoot problems, assist with
-								investigations, enforce the terms of service and take other actions permitted by law. The information we retain will be handled in accordance with this Privacy Policy.
-							</p>
-							<h4>When we need to update this policy</h4>
-							<p>
-								We will need to change this policy from time to time in order to make sure it stays up to date with the latest legal requirements and any changes to our privacy management practices. When we do change the
-								policy, we’ll make sure to notify you about such changes, where required. A copy of the latest version of this policy will always be available on this page.
-							</p>
-							<h4>How you can contact us</h4>
-							<p>
-								If you have any questions about our privacy practices or the way in which we have been managing your personal information, please contact our privacy champion in writing at info@festbot.com. We’re really glad
-								you made it to the end of the privacy policy, because knowing this stuff is the best way to understand how your personal information is used and how to best manage it!
-							</p>
-							<p>If you’re a user or visitor in the European Economic Area these rights also apply to you:</p>
-							<p>For the purposes of applicable EU data protection law (including the General Data Protection Regulation 2016/679 (the “GDPR”), we are a ‘data controller’ of your personal information.</p>
-							<h4>How you can access your personal information</h4>
-							<p>
-								You are also entitled to ask us to port your personal information (i.e. to transfer in a structured, commonly used and machine-readable format, to you), to erase it, or restrict its processing. You also have
-								rights to object to some processing that is based on our legitimate interests, such as profiling that we perform for the purposes of direct marketing, and, where we have asked for your consent to process your
-								data, to withdraw this consent as more fully described below.
-							</p>
-							<p>
-								These rights are limited in some situations – for example, we can demonstrate that we have a legal requirement to process your personal information. In some instances, this means that we may retain some data
-								even if you withdraw your consent.
-							</p>
-							<p>
-								Where we require your personal information to comply with legal or contractual obligations, then provision of such data is mandatory: if such data is not provided, then we will not be able to manage our
-								contractual relationship with you, or to meet obligations placed on us. In all other cases, provision of requested personal information is optional.
-							</p>
-							<p>
-								If you have unresolved concerns you also have the right to complain to data protection authorities. The relevant data protection authority will be the data protection authority of the country: (i) of your
-								habitual residence; (ii) of your place of work; or (iii) in which you consider the alleged infringement has occurred.
-							</p>
-							<p>Both personal information and personal data have the same meaning in the context of this Privacy Policy.</p>
-							<p>Festbot Privacy Policy v1, effective date 25 May 2018</p>
-						</ContentBlockWrapper>
-					</ContentBlockContainer>
-				</VisibiltyControl>
+				<p>Spotify is an audio content delivery service provided by Spotify AB that allows Festbot to incorporate content of this kind on its pages. Personal Data collected: Cookies and Usage Data.</p>
+
+				<p>
+					Place of processing: Sweden –{' '}
+					<a href="https://www.spotify.com/us/legal/privacy-policy/" target="_blank">
+						Privacy Policy
+					</a>.
+				</p>
+
+				<h3>Hosting and backend infrastructure</h3>
+				<p>
+					This type of service has the purpose of hosting Data and files that enable Festbot to run and be distributed as well as to provide a ready-made infrastructure to run specific features or parts of Festbot. Some of these
+					services work through geographically distributed servers, making it difficult to determine the actual location where the Personal Data are stored.
+				</p>
+				<h4>DigitalOcean (DigitalOcean Inc.)</h4>
+				<p>DigitalOcean is a hosting service provided by DigitalOcean Inc.</p>
+				<p>Personal Data collected: various types of Data as specified in the privacy policy of the service.</p>
+				<p>
+					Place of processing: Netherlands – <a href="https://www.digitalocean.com/legal/privacy/">Privacy Policy</a>. Privacy Shield participant.
+				</p>
+
+				<h4>Heroku (Heroku, Inc.)</h4>
+				<p>Heroku is a hosting service provided by Heroku, Inc.</p>
+				<p>Personal Data collected: various types of Data as specified in the privacy policy of the service.</p>
+
+				<p>
+					Place of processing: Germany – <a href="https://www.salesforce.com/company/privacy/">Privacy Policy</a>
+				</p>
+
+				<h3>Location-based interactions</h3>
+				<h4>Non-continuous geolocation (Festbot)</h4>
+				<p>
+					Festbot may collect, use, and share User location Data in order to provide location-based services. Most browsers and devices provide tools to opt out from this feature by default. If explicit authorization has been
+					provided, the User’s location data may be tracked by Festbot.
+				</p>
+				<p>
+					The geographic location of the User is determined in a manner that isn't continuous, either at the specific request of the User or when the User doesn't point out its current location in the appropriate field and allows
+					the application to detect the position automatically.
+				</p>
+				<p>Personal Data collected: geographic position.</p>
+
+				<h2>Further information about Personal Data</h2>
+				<h3>User identification via a universally unique identifier (UUID)</h3>
+				<p>
+					Festbot may track Users by storing a so-called universally unique identifier (or short UUID) for analytics purposes or for storing Users' preferences. This identifier is generated upon installation of this Application,
+					it persists between Application launches and updates, but it is lost when the User deletes the Application. A reinstall generates a new UUID.
+				</p>
+
+				<h2>The rights of Users</h2>
+				<p>Users may exercise certain rights regarding their Data processed by the Owner.</p>
+				<p>In particular, Users have the right to do the following:</p>
+
+				<ul>
+					<li>Withdraw their consent at any time. Users have the right to withdraw consent where they have previously given their consent to the processing of their Personal Data.</li>
+					<li>
+						Object to processing of their Data. Users have the right to object to the processing of their Data if the processing is carried out on a legal basis other than consent. Further details are provided in the dedicated
+						section below.
+					</li>
+					<li>Access their Data. Users have the right to learn if Data is being processed by the Owner, obtain disclosure regarding certain aspects of the processing and obtain a copy of the Data undergoing processing.</li>
+					<li>Verify and seek rectification. Users have the right to verify the accuracy of their Data and ask for it to be updated or corrected.</li>
+					<li>
+						Restrict the processing of their Data. Users have the right, under certain circumstances, to restrict the processing of their Data. In this case, the Owner will not process their Data for any purpose other than
+						storing it.
+					</li>
+					<li>Have their Personal Data deleted or otherwise removed. Users have the right, under certain circumstances, to obtain the erasure of their Data from the Owner.</li>
+					<li>
+						Receive their Data and have it transferred to another controller. Users have the right to receive their Data in a structured, commonly used and machine readable format and, if technically feasible, to have it
+						transmitted to another controller without any hindrance. This provision is applicable provided that the Data is processed by automated means and that the processing is based on the User's consent, on a contract which
+						the User is part of or on pre-contractual obligations thereof.
+					</li>
+					<li>Lodge a complaint. Users have the right to bring a claim before their competent data protection authority.</li>
+				</ul>
+
+				<h3>Details about the right to object to processing</h3>
+				<p>
+					Where Personal Data is processed for a public interest, in the exercise of an official authority vested in the Owner or for the purposes of the legitimate interests pursued by the Owner, Users may object to such
+					processing by providing a ground related to their particular situation to justify the objection.
+				</p>
+				<p>
+					Users must know that, however, should their Personal Data be processed for direct marketing purposes, they can object to that processing at any time without providing any justification. To learn, whether the Owner is
+					processing Personal Data for direct marketing purposes, Users may refer to the relevant sections of this document.
+				</p>
+
+				<h3>How to exercise these rights</h3>
+				<p>
+					Any requests to exercise User rights can be directed to the Owner through the contact details provided in this document. These requests can be exercised free of charge and will be addressed by the Owner as early as
+					possible and always within one month.
+				</p>
+
+				<h2>Additional information about Data collection and processing</h2>
+				<h3>Legal action</h3>
+				<p>The User's Personal Data may be used for legal purposes by the Owner in Court or in the stages leading to possible legal action arising from improper use of Festbot or the related Services.</p>
+				<p>The User declares to be aware that the Owner may be required to reveal personal data upon request of public authorities.</p>
+
+				<h3>Additional information about User's Personal Data</h3>
+				<p>
+					In addition to the information contained in this privacy policy, Festbot may provide the User with additional and contextual information concerning particular Services or the collection and processing of Personal Data
+					upon request.
+				</p>
+
+				<h3>System logs and maintenance</h3>
+				<p>For operation and maintenance purposes, Festbot and any third-party services may collect files that record interaction with Festbot (System logs) use other Personal Data (such as the IP Address) for this purpose.</p>
+
+				<h3>Information not contained in this policy</h3>
+				<p>More details concerning the collection or processing of Personal Data may be requested from the Owner at any time. Please see the contact information at the beginning of this document.</p>
+
+				<h3>How “Do Not Track” requests are handled</h3>
+				<p>Festbot does not support “Do Not Track” requests.</p>
+				<p>To determine whether any of the third-party services it uses honor the “Do Not Track” requests, please read their privacy policies.</p>
+
+				<h3>Changes to this privacy policy</h3>
+				<p>
+					The Owner reserves the right to make changes to this privacy policy at any time by giving notice to its Users on this page and possibly within Festbot and/or - as far as technically and legally feasible - sending a
+					notice to Users via any contact information available to the Owner. It is strongly recommended to check this page often, referring to the date of the last modification listed at the bottom.{' '}
+				</p>
+
+				<p>Should the changes affect processing activities performed on the basis of the User’s consent, the Owner shall collect new consent from the User, where required.</p>
+
+				<h2>Legal information</h2>
+
+				<p>This privacy statement has been prepared based on provisions of multiple legislations, including Art. 13/14 of Regulation (EU) 2016/679 (General Data Protection Regulation).</p>
+
+				<p>This privacy policy relates solely to Festbot, if not stated otherwise within this document.</p>
+
+				<p>Latest update: June 05, 2018</p>
 			</div>
 		);
 	}
