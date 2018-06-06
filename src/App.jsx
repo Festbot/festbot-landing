@@ -12,8 +12,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import * as colors from 'material-ui/styles/colors';
 import { BrowserRouter } from 'react-router-dom';
-import FestivalProgramContainer from './containers/webview/FestivalProgramContainer/FestivalProgramContainer.jsx';
-import DiscoverContainer from './containers/webview/Discover/DiscoverContainer.jsx';
+
 import LandingPageContainer from './containers/www/LandingPage/LandingPageContainer.jsx';
 import PartnerLandingPageContainer from './containers/www/LandingPage/PartnerLandingPageContainer.jsx';
 import ArtistBrowserContainer from './containers/www/ArtistBrowser/ArtistBrowserContainer.jsx';

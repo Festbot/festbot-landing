@@ -3,21 +3,17 @@ import TextField from 'material-ui/TextField';
 import ActionSearch from 'material-ui/svg-icons/action/search';
 
 class SearchBar extends Component {
-  
-  debounce = (e,searchQuery) => {
-    if (this.timer) {
-      clearTimeout(this.timer)
-    }  
-    
-    this.timer = setTimeout(()=>{
-      this.props.searchQueryChanged(searchQuery)
-    },300)
-  }
+	debounce = (e, searchQuery) => {
+		if (this.timer) {
+			clearTimeout(this.timer);
+		}
+
+		this.timer = setTimeout(() => {
+			this.props.searchQueryChanged(searchQuery);
+		}, 300);
+	};
 
 	render() {
-
-
-
 		return (
 			<div style={{ position: 'relative' }}>
 				<ActionSearch
@@ -29,13 +25,7 @@ class SearchBar extends Component {
 						height: 20
 					}}
 				/>
-        <TextField
-          inputStyle={{ borderColor: 'black'}}
-					hintText="Type your search"
-					onChange={this.debounce}
-					fullWidth={true}
-					
-				/>
+				<TextField inputStyle={{ borderColor: 'black' }} hintText="Type your search" onChange={this.debounce} fullWidth={true} />
 			</div>
 		);
 	}
