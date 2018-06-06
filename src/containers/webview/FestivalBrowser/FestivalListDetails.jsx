@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import classes from './festivalListItem.css';
 import * as colors from 'material-ui/styles/colors';
 
@@ -13,80 +13,58 @@ import { Rating } from 'material-ui-rating';
 import moment from 'moment';
 
 export class ProgramDetails extends Component {
-  state={
+	state = {
 		slideIndex: 0,
-		events:[],
-		artist:{
-			facebook:'',
-			website:'',
-			spotify:'',
-			genres:[],
-
+		events: [],
+		artist: {
+			facebook: '',
+			website: '',
+			spotify: '',
+			genres: []
 		}
-  }
+	};
 
+	render() {
+		return (
+			<div>
+				<div className={classes.detailsContent}>
+					<div style={{ width: '50%' }}>
+						<h2>Start date: </h2>
+						<p>{moment(this.props.festivalStartDate).format('MMM Do')}</p>
+					</div>
+					<div style={{ width: '50%' }}>
+						<h2>End date:</h2>
+						<p>{moment(this.props.festivalEndDate).format('MMM Do')}</p>
+					</div>
+				</div>
 
-  render() {
+				<div className={classes.detailsHeader}>Description:</div>
+				<div className={classes.detailsContent}>{this.props.festival.description}</div>
 
+				<div className={classes.detailsContent}>
+					<div style={{ width: '50%' }}>
+						<h2>Rating: {this.props.festival.rating}</h2>
+						<Rating
+							itemStyle={{
+								width: '25px',
+								padding: '0',
+								margin: '0'
+							}}
+							value={this.props.festival.rating}
+						/>
+					</div>
+					<div style={{ width: '50%' }}>
+						<h2>Ticket:</h2>
+						<p>{this.props.festival.website}</p>
+					</div>
+				</div>
 
-    return (
-
-      <div>
-        <div className={classes.detailsContent}>
-        <div style={{width:'50%'}}>
-          <h2>Start date: </h2>
-          <p>{moment(this.props.festivalStartDate).format('MMM Do')}</p>
-        </div>
-        <div style={{width:'50%'}}>
-          <h2>End date:</h2>
-          <p>{moment(this.props.festivalEndDate).format('MMM Do')}</p>
-      </div> 
-      </div> 
-
-      
-      <div className={classes.detailsHeader}>
-      Description: 
-      </div>
-      <div className={classes.detailsContent}>
-      {this.props.festival.description}
-      </div>
-    
-      <div className={classes.detailsContent}>
-      <div style={{width:'50%'}}>
-          <h2>Rating: {this.props.festival.rating}</h2>
-          <Rating
-              itemStyle={{
-                width: '25px',
-                padding: '0',
-                margin: '0'
-              }}
-              value={this.props.festival.rating}
-            />
-        </div>
-        <div style={{width:'50%'}}>
-          <h2>Ticket:</h2>
-          <p>{this.props.festival.website}</p>
-        </div> 
-      </div>         
-
-
-
-      <div className={classes.detailsContent}>
-          <RaisedButton
-            containerElement={<Link to={"/festival/" + this.props.festival.name}/>}
-            onClick={this.props.webviewMenuChange}
-            label="Browse"
-            primary={true}
-            style={{ float: 'right' }}
-          />
-      </div>
-
-
-    </div>
-    )
-  }
+				<div className={classes.detailsContent}>
+					<RaisedButton containerElement={<Link to={'/festival/' + this.props.festival.name} />} onClick={this.props.webviewMenuChange} label="Browse" primary={true} style={{ float: 'right' }} />
+				</div>
+			</div>
+		);
+	}
 }
 
-
-
-export default ProgramDetails
+export default ProgramDetails;

@@ -1,22 +1,22 @@
-.contentContainer{
-  padding-top: 70px;
-  overflow: hidden;
-  
+.contentContainer {
+	padding-top: 70px;
+	max-width: 800px;
+	margin: 0 auto;
 }
 
-h1,h2,h3,h4 {
-  padding:15px;
-}
-.simpleList{
-  background-color: white !important;
-  font-size: 80%;
-
-  line-height: 150%;
+h1,
+h2,
+h3,
+h4 {
+	padding: 15px 0;
 }
 
+li {
+	line-height: 1.5;
+}
 
 @media (max-width: 768px) {
-  .contentContainer {
-    padding-top: 40px;
-  }
+	.contentContainer {
+		padding-top: 40px;
+	}
 }

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import axios from 'axios';
 import 'babel-polyfill';
 import qs from 'query-string';
-import {getUserId} from '../../../components/apiHelper.js'
-
+import { getUserId } from '../../../components/apiHelper.js';
 
 import Aux from '../../../hoc/Aux/Aux.jsx';
 import classes from './FestbotBrowserContainer.css';
@@ -20,11 +19,11 @@ import CircularProgress from 'material-ui/CircularProgress';
 import { GridList, GridTile } from 'material-ui/GridList';
 
 import SearchBar from '../../../ui/SearchBar.jsx';
-import ScrollToTop from 'react-scroll-up'
+import ScrollToTop from 'react-scroll-up';
 
 import FestivalListBuilder from '../FestivalBrowser/FestivalListBuilder.jsx';
 
-import {Helmet} from "react-helmet";
+import { Helmet } from 'react-helmet';
 
 import md5 from 'md5';
 
@@ -42,104 +41,79 @@ export class FestivalBrowserContainer extends Component {
 	};
 
 	async componentDidMount() {
-		this.props.onViewChange('festbot')
+		this.props.onViewChange('festbot');
 
-		let { data } = await axios.get(
-			'https://api.festbot.com/festivals/_design/default/_list/all-data/default-view'
-		);
+		let { data } = await axios.get('https://api.festbot.com/festivals/_design/default/_list/all-data/default-view');
 
-
-    	this.setState({ searchResults: data, data: data });
+		this.setState({ searchResults: data, data: data });
 		console.log('fest data:', data);
 		console.log('state search results:', this.state.searchResults);
 
-		console.log(this.props)
+		console.log(this.props);
 
-//Developer
+		//Developer
 
-			// try {
-			// 	const userId = '6a25c382f59ef02407e723a092ba062b'
-			// 	const { data } = await getUserId(userId);
-			// 	this.props.setUser(data);
-			// } catch (error) {
-			// 	console.warn('get user data error', error);
-			// 	alert('Network Error');
-			// }
+		// try {
+		// 	const userId = '6a25c382f59ef02407e723a092ba062b'
+		// 	const { data } = await getUserId(userId);
+		// 	this.props.setUser(data);
+		// } catch (error) {
+		// 	console.warn('get user data error', error);
+		// 	alert('Network Error');
+		// }
 
-//live
-MessengerExtensions.getContext('817793415088295',
-  			async ({psid}) => {
-			try {
-				const userId = md5(psid)
-				const { data } = await getUserId(userId);
-				this.props.setUser(data);
-			} catch (error) {
-				console.warn('get user data error', error);
-				alert('Network Error');
-			}
+		//live
+		MessengerExtensions.getContext(
+			'817793415088295',
+			async ({ psid }) => {
+				try {
+					const userId = md5(psid);
+					const { data } = await getUserId(userId);
+					this.props.setUser(data);
+				} catch (error) {
+					console.warn('get user data error', error);
+					alert('Network Error');
+				}
 			},
-			function error(err){
+			function error(err) {
 				console.warn('no psid :(');
 			}
-	);
-
-
-
-		}
+		);
+	}
 
 	festivalListFilter = keyword => {
 		console.log(keyword);
-		console.log(
-			'object keys search results:',
-			Object.keys(this.state.data)
-		);
+		console.log('object keys search results:', Object.keys(this.state.data));
 
-		const filteredResults = this.state.data
-			.filter(festival => {
-				return (
-					(festival.name
-						.toLowerCase()
-						.indexOf(keyword.toLowerCase()) > -1 )||
-          (festival.description
-            .toLowerCase()
-            .indexOf(keyword.toLowerCase()) > -1)
-				)
-			})
+		const filteredResults = this.state.data.filter(festival => {
+			return festival.name.toLowerCase().indexOf(keyword.toLowerCase()) > -1 || festival.description.toLowerCase().indexOf(keyword.toLowerCase()) > -1;
+		});
 
 		console.log('filtered Results', filteredResults);
-		if (filteredResults.length == 0) return
+		if (filteredResults.length == 0) return;
 		this.setState({ searchResults: filteredResults });
-
 	};
 
 	render() {
-		console.log('user data:',this.props.userData)
+		console.log('user data:', this.props.userData);
 
-		if (this.state.data.length ===0) {
+		if (this.state.data.length === 0) {
 			return (
 				<div className={classes.center}>
-					<CircularProgress
-						style={{ margin: 'auto' }}
-						size={80}
-						thickness={5}
-					/>
+					<CircularProgress style={{ margin: 'auto' }} size={80} thickness={5} />
 				</div>
 			);
 		}
 
 		return (
-			<div style={{ paddingBottom: '80px' ,paddingTop: '20px'}}>
+			<div style={{ paddingBottom: '80px', paddingTop: '20px' }}>
 				<Helmet>
 					<title>Festbot - Activation</title>
 				</Helmet>
 				<SearchBar searchQueryChanged={this.festivalListFilter} />
 
 				<List>
-					<FestivalListBuilder
-						festivals={this.state.searchResults}
-            handleOpen={this.handleOpen}
-
-					/>
+					<FestivalListBuilder festivals={this.state.searchResults} handleOpen={this.handleOpen} />
 				</List>
 				<ScrollToTop showUnder={500}>
 					<span className={classes.scrollToTopButton}>UP</span>
@@ -150,15 +124,14 @@ MessengerExtensions.getContext('817793415088295',
 }
 
 const mapStateToProps = state => {
-
-  return{
-    webviewMenu:state.webviewMenu,
-    isActive:{
-      Trending: state.isActiveTrending,
-      Filter: state.isActiveFilter,
-			Favourite: state.isActiveFavourite,
+	return {
+		webviewMenu: state.webviewMenu,
+		isActive: {
+			Trending: state.isActiveTrending,
+			Filter: state.isActiveFilter,
+			Favourite: state.isActiveFavourite
 		},
-		userData:{
+		userData: {
 			userId: state.userId,
 			activeFestival: state.activeFestival,
 			savedArtists: state.savedArtists,
@@ -166,20 +139,20 @@ const mapStateToProps = state => {
 			topArtists: state.topArtists,
 			topGenres: state.topGenres
 		}
-
-  };
+	};
 };
 
-const mapDispatchToProps =  dispatch => {
-  return {
-    onTrendingToggle: () => dispatch({type: 'UPD_TRENDING' }),
-    onFilterToggle: () => dispatch({type: 'UPD_FILTER' }),
-		onFavouriteToggle: () => dispatch({type: 'UPD_FAVOURITE'}),
-		onViewChange: (actualViewMenu) => dispatch({type: 'UPD_MENU', value: actualViewMenu}),
-		setUser: (userData) => dispatch ({type: 'SET_USER',value: userData}),
-  }
-}
+const mapDispatchToProps = dispatch => {
+	return {
+		onTrendingToggle: () => dispatch({ type: 'UPD_TRENDING' }),
+		onFilterToggle: () => dispatch({ type: 'UPD_FILTER' }),
+		onFavouriteToggle: () => dispatch({ type: 'UPD_FAVOURITE' }),
+		onViewChange: actualViewMenu => dispatch({ type: 'UPD_MENU', value: actualViewMenu }),
+		setUser: userData => dispatch({ type: 'SET_USER', value: userData })
+	};
+};
 
-export default connect(mapStateToProps,mapDispatchToProps)(FestivalBrowserContainer);
-
-
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(FestivalBrowserContainer);

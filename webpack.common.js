@@ -31,21 +31,11 @@ module.exports = {
 				options: {
 					presets: ['env', 'react'],
 					cacheDirectory: true,
-					plugins: [
-						'transform-object-rest-spread',
-						'transform-react-jsx',
-						'transform-class-properties',
-						'transform-async-to-generator',
-						'react-hot-loader/babel'
-					]
+					plugins: ['transform-object-rest-spread', 'transform-react-jsx', 'transform-class-properties', 'transform-async-to-generator', 'react-hot-loader/babel']
 				}
 			},
 			{
-				use: [
-					MiniCssExtractPlugin.loader,
-					'css-loader',
-					'less-loader'
-				],
+				use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'],
 				test: /\.less$/
 			},
 			{
@@ -64,8 +54,8 @@ module.exports = {
 			filename: './index.html'
 		}),
 		new MiniCssExtractPlugin({
-			filename: "[name].css",
-			chunkFilename: "[id].css"
+			filename: '[name].css',
+			chunkFilename: '[id].css'
 		})
 	]
 };
