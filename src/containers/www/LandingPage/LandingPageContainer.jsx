@@ -23,6 +23,7 @@ export class LandingPageContainer extends Component {
 						buttonColor="#0099E5"
 						imgUrl="http://festbot.com/assets/image/splash.jpg"
 						height="700px"
+						actionUrl="http://m.me/1976488962678917"
 					/>
 				</VisibiltyControl>
 

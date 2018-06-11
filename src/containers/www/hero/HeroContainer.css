@@ -58,3 +58,8 @@
 .getStarted:hover {
 	background-color: rgb(62, 168, 221);
 }
+
+a{
+	text-decoration: none;
+	color:white;
+}

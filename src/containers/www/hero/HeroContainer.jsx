@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './HeroContainer.css';
 
-const Hero = ({ title, subtitle, buttonText, buttonColor, imgUrl, height }) => {
+const Hero = ({ title, subtitle, buttonText, buttonColor, imgUrl, height,actionUrl }) => {
 	return (
 		<div>
 			<div className={classes.container} style={{ backgroundImage: "url('" + imgUrl + "')", height: height }}>
@@ -9,7 +9,7 @@ const Hero = ({ title, subtitle, buttonText, buttonColor, imgUrl, height }) => {
 					<div className={classes.header}>{title}</div>
 					<div className={classes.title}>{subtitle}</div>
 					<div className={classes.getStarted} style={{ backgroundColor: buttonColor }}>
-						{buttonText}
+					<a href={actionUrl} target="_blank">{buttonText}</a>
 					</div>
 				</div>
 			</div>
