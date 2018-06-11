@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component,Fragment } from 'react';
 import classes from './FooterContainer.css';
 import { Link } from 'react-router-dom';
 import * as T from '../../../helpers/i18n.js';
 
-import logoSmall from '../../../assets/images/festbot-logo-big-grey-01.png';
+import logoSmall from '../../../assets/images/festbot01.png';
+//import logoSmall from '../../../assets/images/festbot-logo-big-grey-01.png';
 import facebookLogo from '../../../assets/images/facebook.svg';
 import instagramLogo from '../../../assets/images/instagram.svg';
 import messengerLogo from '../../../assets/images/messenger.svg';
@@ -56,16 +57,16 @@ export class FooterContainer extends Component {
 
 	render() {
 		return (
-			<div style={{ zIndex: '0' }}>
+			<Fragment>
 				<div className={classes.watchContainer} style={{ opacity: 1 - this.state.opacity, height: this.state.watchDivHeight }} />
 				<div ref={el => (this.footerDiv = el)} style={{ opacity: this.state.opacity, transform: 'translateY(' + this.state.shiftY + 'px)' }} className={classes.footerContainer}>
-					<img className={classes.footerLogo} src={logoSmall} />
+					<img className={classes.footerLogo} src={logoSmall} width="300px"/>
 					<div className={classes.titleText}>{T.translate('a personal assistant for the festival season')}</div>
 					<div className={classes.footerLinkBar}>
 						<div className={classes.socialLinks}>
-							<img style={{ width: '50px', color: '#444444' }} src={facebookLogo} />
-							<img style={{ width: '50px', color: '#444444' }} src={instagramLogo} />
-							<img style={{ width: '50px', color: '#444444' }} src={messengerLogo} />
+							<a href="https://www.facebook.com/Festbot-1976488962678917/" target="_blank"><img style={{ width: '22px', color: '#232323' }} src={facebookLogo} /></a>
+							<a href="https://www.instagram.com/festbot/" target="_blank"><img style={{ width: '22px', color: '#232323' }} src={instagramLogo} /></a>
+							<a href="https://www.facebook.com/Festbot-1976488962678917/" target="_blank"><img style={{ width: '22px', color: '#232323' }} src={messengerLogo} /></a>
 						</div>
 						<div className={classes.footerLinkGroup}>
 							<div className={classes.footerLink}>{T.translate('Contact')} </div>
@@ -80,7 +81,7 @@ export class FooterContainer extends Component {
 						<div className={classes.copyright}>2018 &copy; Festbot</div>
 					</div>
 				</div>
-			</div>
+			</Fragment>
 		);
 	}
 }

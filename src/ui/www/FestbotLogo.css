@@ -2,8 +2,14 @@
   display: inline-block;
 }
 
+.logoImg{
+  width: 190px;
+  padding-left: 20px;
+}
+
 @media (max-width: 768px) {
   .logoImg {
-      width: 50%;
+      width: 30%;
+      padding-left: 10px;
   }
 }

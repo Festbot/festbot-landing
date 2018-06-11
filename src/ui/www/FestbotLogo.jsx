@@ -1,5 +1,6 @@
 import React from 'react'
-import LogoImage from '../../assets/images/www-festbot-logo.png'
+//import LogoImage from '../../assets/images/www-festbot-logo.png'
+import LogoImage from '../../assets/images/festbot01.png'
 import classes from './FestbotLogo.css'
 
 const FestbotLogo = () => {
