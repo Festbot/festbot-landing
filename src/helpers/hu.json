@@ -14,7 +14,7 @@
 	"Festbot is working on the Messenger Platform as a converstaion thread. Just say Hi to Festbot, that's all.": "A Festbot a Messengeren belül működik, mint egy beszélgetési szál. Kezdésnek csak írd be hogy Helló, ennyi az egész.",
 	"It is for you": "Rád szabva",
 	"Festbot is learning and collecting the information what suits you the best.": "A Fesbot folyamatosan fejlődik és próbál téged megismerni, hogy a lehető legjobban tudjon segíteni Neked.",
-	"a personal assistant for the festival season": "a személyes fesztivál asszisztens",
+	"a personal assistant for the festival season": "A fesztivál asszisztensed",
 	"Contact": "Kapcsolat",
 	"Partner": "Partnerek",
 	"Privacy": "Adatvédelem",
@@ -22,5 +22,10 @@
 	"Home": "Főoldal",
 	"Features": "Részletek",
 	"Artist Browser": "Előadók",
-	"Festival Catalog": "Fesztivál Programok"
+	"Festival Catalog": "Fesztivál Programok",
+	"Genres":"Népszerű Műfajok",
+	"Featured Artists":"Kiemelt Előadók",
+	"On tour":"Turné időpontok",
+	"Website:":"Weboldal:",
+	"Sorry we couldn't find the artist on Spotify":"Sajnos nem találtunk egyező előadót a Spotify-on"
 }

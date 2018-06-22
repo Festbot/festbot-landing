@@ -1,16 +1,125 @@
 .contentContainer {
 	padding-top: 70px;
-	overflow: hidden;
+  overflow: hidden;
+  background-color: white;
 }
 
-.highlightCarousel {
-	height: 900px;
-	width: 30px;
-	background-color: blue;
+.highlightContainer {
+	//height: 800px;
+	width: 100%;
+
+}
+
+.highlightHeader{
+  font-size: 200%;
+  font-weight: 900;
+  padding:50px;
+
+}
+
+.highlightGenre{
+  font-weight: 300;
+  font-size: 80%;
+  display:inline-block;
+  padding: 10px;
+  color:rgb(62, 168, 221);
+}
+
+.highlightGenre:hover{
+  color:rgb(32, 138, 191);
+  border-bottom: 1px solid rgb(32, 138, 191);
+  cursor: pointer;
+
+}
+
+.highlightTitle{
+  display:inline-block;
+  padding: 10px;
+}
+
+.highlightSliderItemContainer{
+  display: inline-block;
+  
+  
+}
+
+
+
+.separator {
+  border-bottom: 1px solid #ddd;
+  padding-top: 15px;
+}
+
+
+.highlightSliderContainer{
+  overflow-x: scroll;
+  white-space:nowrap;
+  width:100%;
+
+  transition: all 0.3s ease-in-out;
+  -webkit-overflow-scrolling: touch;
+
+}
+
+.highlightSliderItem{
+  display:inline-block;
+  background-color: white;
+  width:320px;
+  height:320px;
+  margin:10px;
+  padding-top: 10px;
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5) ;
+  transition: none;
+  background-size: cover;
+  background-position: center center;  
+
+}
+
+.highlightSliderItemTitle{
+  color: white;
+  font-size: 150%;
+  background-color: rgba(0,0,0,0.5);
+  padding:10px;
+}
+
+.genresItem{
+  
+  transition: none;
+  background-size: cover;
+  background-position: center center;  
+}
+
+.genresItemContainer{
+  display: inline-block;
+  padding:10px;
+  border-radius: 2px;
+}
+
+.title{
+  display: block;
+ padding:10px;
+  background-color: white;
+}
+
+
+.artistDetailsContainer {
+  width:100%;
+	padding: 100px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	overflow: hidden;
 }
 
 @media (max-width: 768px) {
 	.contentContainer {
 		padding-top: 40px;
-	}
+  }
+  .highlightHeader{
+    padding:50px 10px;
+  }
+  .highlightGenre{
+    font-size: 80%;
+  }
 }

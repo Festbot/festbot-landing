@@ -11,7 +11,7 @@ const ContentBlockImage = ({ imageUrl, videoUrl, height, title, subtitle, button
 				<img src={phoneCanvas} />
 				<div className={classes.frame}>
 					<div className={classes.video}>
-						<video autoPlay loop height="416" playsinline>
+						<video autoPlay loop height="416" playsInline>
 							<source src={videoUrl} type="video/mp4" />
 						</video>
 					</div>
