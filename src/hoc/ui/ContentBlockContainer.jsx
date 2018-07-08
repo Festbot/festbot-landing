@@ -10,7 +10,7 @@ export class ContentBlockContainer extends Component {
 					backgroundColor: this.props.backgroundColor,
 					backgroundImage: "url('" + this.props.imageUrl + "')",
 					minHeight: this.props.height,
-
+					padding: this.props.padding,
 					backgroundPosition: this.props.backgroundPosition + ' center'
 				}}
 			>

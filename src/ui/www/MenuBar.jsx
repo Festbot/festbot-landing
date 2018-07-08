@@ -11,7 +11,7 @@ export class MenuBar extends Component {
 			<div className={classes.menuContainer}>
 				
 					<Link to='/' className={classes.menuItem}>{T.translate("Home")}</Link>
-					<Link to='#features' className={classes.menuItem}>{T.translate("Features")}</Link>
+					<Link to='/features' className={classes.menuItem}>{T.translate("Features")}</Link>
 					<Link to='/artist' className={classes.menuItem}>{T.translate("Artist Browser")}</Link>
 					<Link to='/festival_catalog' className={classes.menuItem}>{T.translate("Festival Catalog")}</Link>
 					<Link to='/partner' className={classes.partner}>{T.translate("Partner")}</Link>

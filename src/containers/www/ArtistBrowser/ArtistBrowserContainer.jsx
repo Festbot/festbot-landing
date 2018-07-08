@@ -11,6 +11,7 @@ import ArtistDetails from './ArtistDetails.jsx';
 import * as T from '../../../helpers/i18n.js';
 import axios from 'axios';
 import 'babel-polyfill';
+import { Helmet } from 'react-helmet';
 
 import VisibiltyControl from '../../../hoc/VisibilityControl/VisibilityControl.jsx';
 
@@ -19,29 +20,33 @@ export class ArtistBrowserContainer extends Component {
 		searchResults: [],
 		data: [],
 		activeDetails: '',
-		activeGenre: 'Pop',
-		activeArtist: 'Kygo'
+		activeGenre: 'pop',
+		activeArtist: 'Dubrelation feat Theo'
 	};
 
 	async componentDidMount() {
-		let { data } = await axios.get('https://api.festbot.com/artists/_design/webview/_view/order-by-featured?descending=true');
+		let {
+			data: { docs: data }
+		} = await axios.post('https://api.festbot.com/artists/_find', { selector: { name: { $regex: '(?i)' } }, limit: 10, sort: [{ featured: 'desc' }, { popularity: 'desc' }] });
 
-		this.setState({ searchResults: data.rows, data: data.rows });
+		this.setState({ searchResults: data, data: data });
 
 		if (!this.props.match.params.artist_name == '') {
 			this.artistKeywordFilter(this.props.match.params.artist_name);
 		}
+
+		this.filterToGenre("pop")
 	}
 
-	artistKeywordFilter = keyword => {
-		const filteredResults = this.state.data.filter(({ value: artist }) => {
-			return (
-				artist.name.toLowerCase().indexOf(keyword.toLowerCase()) > -1 ||
-				artist.genres.filter(genres => {
-					return genres.toLowerCase().indexOf(keyword.toLowerCase()) > -1;
-				}).length > 0
-			);
+	artistKeywordFilter = async keyword => {
+		let {
+			data: { docs: filteredResults }
+		} = await axios.post('https://api.festbot.com/artists/_find', {
+			selector: { $or: [{ name: { $regex: '(?i)' + keyword } }, { genres: { $elemMatch: { $regex: '(?i)' + keyword } } }] },
+			limit: 100,
+			sort: [{ featured: 'desc' }, { popularity: 'desc' }]
 		});
+
 
 		if (filteredResults.length == 0) return;
 		this.setState({
@@ -58,35 +63,37 @@ export class ArtistBrowserContainer extends Component {
 		}
 	};
 
-	filterToGenre = keyword => {
-		const filteredResults = this.state.data.filter(({ value: artist }) => {
-			return (
-				artist.genres.filter(genres => {
-					return genres.toLowerCase().indexOf(keyword.toLowerCase()) > -1;
-				}).length > 0
-			);
-		});
+	filterToGenre = async keyword => {
 
-		return filteredResults;
+		const {
+			data: { docs: filteredResults }
+		} = await axios.post('https://api.festbot.com/artists/_find', {
+			selector: {  genres: { $elemMatch: { $regex: '(?i)' + keyword }  }},
+			limit: 50,
+			sort: [{ featured: 'desc' }, { popularity: 'desc' }]
+		});
+		
+		this.setState({ artistListFilteredByGenre: filteredResults });
 	};
 
 	setFilterGenre = e => {
 		if (this.state.activeGenre !== e.currentTarget.textContent) {
 			this.setState({ activeGenre: e.currentTarget.textContent });
-			console.log(e.currentTarget.textContent);
+
+			this.filterToGenre(e.currentTarget.textContent)
 		}
 	};
 	setArtistDetails = e => {
 		if (this.state.activeGenre !== e.currentTarget.id) {
 			this.setState({ activeArtist: e.currentTarget.id });
-			console.log(e.currentTarget.id);
+
 		}
 	};
 
 	render() {
 		const sliceOfArtist = this.state.searchResults.slice(0, 10);
 
-		const featuredArtists = sliceOfArtist.map(({ value: artist }, index) => {
+		const featuredArtists = sliceOfArtist.map((artist, index) => {
 			return (
 				<div
 					className={classes.highlightSliderItem}
@@ -100,26 +107,32 @@ export class ArtistBrowserContainer extends Component {
 			);
 		});
 
-		const sliceOfGenre = this.filterToGenre(this.state.activeGenre).slice(0, 50);
-		const filteredGenre = sliceOfGenre.map(({ value: artist }, index) => {
-			return (
-				<div className={classes.genresItemContainer} key={index} id={artist.name} onClick={this.setArtistDetails}>
-					<div
-						className={classes.genresItem}
-						style={{
-							backgroundImage: artist.artistPhoto ? 'url(https://ucarecdn.com/' + artist.artistPhoto + '/)' : 'none',
-							height: '200px',
-							width: '200px',
-							boxShadow: 'none'
-						}}
-					/>
-					<div className={classes.title}>{artist.name}</div>
-				</div>
-			);
-		});
-
+		let filteredGenre =''
+		if (this.state.artistListFilteredByGenre){
+			filteredGenre = this.state.artistListFilteredByGenre.map((artist, index) => {
+				return (
+					<div className={classes.genresItemContainer} key={index} id={artist.name} onClick={this.setArtistDetails}>
+						<div
+							className={classes.genresItem}
+							style={{
+								backgroundImage: artist.artistPhoto ? 'url(https://ucarecdn.com/' + artist.artistPhoto + '/)' : 'none',
+								height: '200px',
+								width: '200px',
+								boxShadow: 'none'
+							}}
+						/>
+						<div className={classes.title}>{artist.name}</div>
+					</div>
+				);
+			});
+	
+		}
+		
 		return (
 			<div className={classes.contentContainer}>
+			<Helmet>
+				<title>{this.state.activeArtist}</title>
+			</Helmet>
 				<div className={classes.highlightContainer}>
 					<div className={classes.highlightHeader}>
 						{T.translate('Featured Artists')}
@@ -131,25 +144,25 @@ export class ArtistBrowserContainer extends Component {
 					<div className={classes.highlightHeader}>
 						<div className={classes.highlightTitle}>{T.translate('Genres')} </div>
 						<div onClick={this.setFilterGenre} className={classes.highlightGenre}>
-							Pop
+							pop
 						</div>
 						<div onClick={this.setFilterGenre} className={classes.highlightGenre}>
-							Electronic
+							electronic
 						</div>
 						<div onClick={this.setFilterGenre} className={classes.highlightGenre}>
-							Rock
+							rock
 						</div>
 						<div onClick={this.setFilterGenre} className={classes.highlightGenre}>
-							Alternative
+							alternative
 						</div>
 						<div onClick={this.setFilterGenre} className={classes.highlightGenre}>
-							House
+							house
 						</div>
 						<div onClick={this.setFilterGenre} className={classes.highlightGenre}>
-							Minimal
+							minimal
 						</div>
 						<div onClick={this.setFilterGenre} className={classes.highlightGenre}>
-							Metal
+							metal
 						</div>
 
 						<div className={classes.separator} />

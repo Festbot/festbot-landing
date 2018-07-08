@@ -37,7 +37,7 @@ export class ArtistDetails extends Component {
 
 		this.setState({ artist: data.docs[0] });
 
-		const { data: eventData } = await axios.post('https://api.festbot.com/shows/_find', { selector: { artist: this.props.artist } });
+		const { data: eventData } = await axios.post('https://api.festbot.com/events/_find', { selector: { artist: this.props.artist } });
 
 		this.setState({
 			events: eventData.docs.sort((eventA, eventB) => {

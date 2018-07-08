@@ -102,15 +102,7 @@
 }
 
 
-.artistDetailsContainer {
-  width:100%;
-	padding: 100px 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-	overflow: hidden;
-}
+
 
 @media (max-width: 768px) {
 	.contentContainer {
