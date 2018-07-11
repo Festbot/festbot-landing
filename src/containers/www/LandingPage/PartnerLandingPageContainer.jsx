@@ -152,7 +152,7 @@ export class ParnerLandingPageContainer extends Component {
 						</ContentBlockWrapper>
 						<ContentBlockWrapper maxWidth="600px">
 							<VisibiltyControl effect="zoom" always={true}>
-								<ContentBlockImage imageUrl="http://festbot.com/assets/image/crowd.jpg" height="600px" title="For Artists" subtitle="Let's check what Festbot can do for you." buttonText="Get Started" buttonColor="#9900E5" />
+								<ContentBlockImage height="600px" title="For Artists" subtitle="Let's check what Festbot can do for you." buttonText="Get Started" buttonColor="#9900E5" />
 							</VisibiltyControl>
 						</ContentBlockWrapper>
 					</ContentBlockContainer>

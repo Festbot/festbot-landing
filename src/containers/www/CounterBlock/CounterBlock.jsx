@@ -9,7 +9,7 @@ const CounterBlock = ({ icon, iconSize, iconAlign, title, description, backgroun
 	return (
 		<div className={classes.container} >
 
-			<div className={classes.content} style={{ backgroundColor: backgroundColor }}>
+			<div className={classes.content} style={{ backgroundColor: backgroundColor, color:textColor }}>
 				<div className={classes.title}>{title}</div>
 				<div className={classes.description}>{description}</div>
 			</div>

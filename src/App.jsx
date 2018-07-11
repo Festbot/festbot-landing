@@ -17,7 +17,7 @@ import LandingPageContainer from './containers/www/LandingPage/LandingPageContai
 import PartnerLandingPageContainer from './containers/www/LandingPage/PartnerLandingPageContainer.jsx';
 import ArtistBrowserContainer from './containers/www/ArtistBrowser/ArtistBrowserContainer.jsx';
 import PrivacyPolicyContainer from './containers/www/PrivacyPolicy/PrivacyPolicyContainer.jsx';
-import Features from './containers/www/Features/Features.jsx';
+import GetStarted from './containers/www/Features/GetStarted.jsx';
 import VisibiltyControl from './hoc/VisibilityControl/VisibilityControl.jsx';
 
 import PageInitTop from './components/www/PageInitTop.js';
@@ -48,7 +48,7 @@ class App extends Component {
 							<Route path="/partner" exact component={PartnerLandingPageContainer} />
 							<Route path="/artist" exact component={ArtistBrowserContainer} />
 							<Route path="/privacy" exact component={PrivacyPolicyContainer} />
-							<Route path="/features" exact component={Features} />
+							<Route path="/get_started" exact component={GetStarted} />
 						</PageInitTop>
 					</Layout>
 				</MuiThemeProvider>

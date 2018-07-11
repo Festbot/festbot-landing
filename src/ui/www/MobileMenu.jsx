@@ -33,7 +33,7 @@ export class MobileMenu extends Component {
         <div style={{opacity: this.state.opacity,transform: "rotateY("+ this.state.rotation+"deg)"}} className={classes.menuContainerMobile}>
         
         <Link to='/' onClick={this.menuCloseHandler} className={classes.menuItemMobile}><VisibiltyControl effect='zoom'>{T.translate("Home")}</VisibiltyControl></Link>
-        <Link to='/features' onClick={this.menuCloseHandler} className={classes.menuItemMobile}><VisibiltyControl effect='zoom'>{T.translate("Features")}</VisibiltyControl></Link>
+        <Link to='/get_started' onClick={this.menuCloseHandler} className={classes.menuItemMobile}><VisibiltyControl effect='zoom'>{T.translate("Get Started")}</VisibiltyControl></Link>
         <Link to='/artist' onClick={this.menuCloseHandler} className={classes.menuItemMobile}><VisibiltyControl effect='zoom'>{T.translate("Artist Browser")}</VisibiltyControl></Link>
         <Link to='/festival_catalog' onClick={this.menuCloseHandler} className={classes.menuItemMobile}><VisibiltyControl effect='zoom'>{T.translate("Festival Catalog")}</VisibiltyControl></Link>
         <Link to='/partner' onClick={this.menuCloseHandler} className={classes.menuItemMobile}><VisibiltyControl effect='zoom'>{T.translate("Partner")}</VisibiltyControl></Link>

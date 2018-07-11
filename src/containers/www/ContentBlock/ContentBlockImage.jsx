@@ -20,14 +20,30 @@ const ContentBlockImage = ({ imageUrl, videoUrl, height, title, subtitle, button
 		);
 	}
 
+
+	if (!imageUrl == '') {
+		videoElement = (
+			<div className={classes.container}>
+				<img src={phoneCanvas} />
+				<div className={classes.frame}>
+					<div className={classes.image}>
+						<img src={imageUrl} height="403px" width="230" />
+					</div>
+				</div>
+			</div>
+		);
+	}
+
+	
 	if (!title == '') {
 		imageElement = (
 			<div className={classes.imageContent}>
 				<div className={classes.header}>{title}</div>
 				<div className={classes.title}>{subtitle}</div>
-				<div className={classes.getStarted} style={{ backgroundColor: buttonColor }}>
-					{buttonText}
-				</div>
+				{(buttonText)&&<div className={classes.getStarted} style={{ backgroundColor: buttonColor }}>
+				{buttonText}
+			</div>}
+				
 			</div>
 		);
 	}
