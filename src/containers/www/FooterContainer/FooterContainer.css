@@ -14,9 +14,10 @@
 
 .watchContainer {
   height: 100%;
-  width:1px;
+  width:100%;
 	background-color: black;
-	z-index: 1;
+
+
 }
 
 .footerContainer {
@@ -31,23 +32,21 @@
 	justify-content: center;
 	align-items: center;
 	padding: 50px 0;
-	z-index: -1;
+
 }
 
 
 .footerContainerForLinks {
 	background-color: rgb(203, 217, 224);
 	color: #232323;
-	position: fixed;
+
 	width: 100%;
-	bottom: 0;
-	left: 0;
+
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 
-	z-index: 0;
 }
 
 
@@ -57,7 +56,7 @@
 	padding-top: 40px;
 	text-align: center;
 	line-height: 150%;
-	font-weight: bold;
+	font-weight: 400;
 }
 
 .footerLinkBar {
@@ -66,8 +65,9 @@
 	flex-direction: row;
 	justify-content: space-around;
   align-items: center;
-  position: absolute;
-  bottom:30px;
+
+
+
 }
 
 .footerLinkGroup {
@@ -77,14 +77,15 @@
 	flex-grow: 2;
 	text-align: center;
 	justify-content: space-around;
-	z-index: 5;
+
 }
 
 .footerLink {
 	padding: 0px 20px;
-	font-weight: bold;
+
 	color: black;
-	z-index: 50;
+
+
 }
 
 .footerLogo {
@@ -104,8 +105,7 @@
 	flex-grow: 2;
 	justify-content: center;
 	text-align: center;
-	padding: 10px;
-	font-weight: bold;
+
 }
 
 @media (max-width: 768px) {

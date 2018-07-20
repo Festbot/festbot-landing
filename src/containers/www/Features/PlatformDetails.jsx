@@ -14,7 +14,7 @@ const instructionsSkype = () => {
 	return (instructions = (
 		<div className={classes.container}>
 			<h1>{T.translate("Festbot on Skype is in development")}</h1>
-			<p style={{ color: 'red' }}>{T.translate("IMPORTANT NOTE: Festbot is NOT available on Skype right now, but will be available soon. If you still want to use Festbot now, please temporarly use Kik Messenger instead. You will be notified once Festbot will be available on Skype, and all of your personal data could be easily trasfered to Skype.")}
+			<p style={{ color: 'red' }}>{T.translate("IMPORTANT NOTE: Festbot is NOT available on Skype right now, but will be available soon. If you still want to use Festbot now, please use Facebook Messenger instead. You will be notified once Festbot will be available on Skype, and all of your personal data could be easily trasfered to Skype.")}
 			</p>
 		</div>
 	));
@@ -30,12 +30,11 @@ const instructionsMessenger = () => {
 					{' '}
 					<div className={classes.steps}>
 						<h1>{T.translate("Step 2. Tap the Messenger logo to start")}</h1>
-						<a href="">
+						<a href="http://m.me/1976488962678917">
 							<div className={classes.logoContainer}>
 								<img src="http://festbot.com/assets/image/logo/facebook-messenger-png-transparent-logo-min-min.png" />
 							</div>
 						</a>
-						<p style={{ color: 'red' }}>{T.translate("IMPORTANT NOTE: Festbot is NOT available on Facebook Messenger right now, but will be available soon. If you still want to use Festbot now, please temporarly use Kik Messenger instead. You will be notified once Festbot will be available on Facebook Messenger, and all of your personal data could be easily trasfered to Messenger.")}</p>
 					</div>
 				</VisibiltyControl>
 
@@ -88,7 +87,7 @@ const instructionsViber = () => {
 		<div className={classes.container}>
 			<h1>{T.translate("Festbot on Viber is in development")}</h1>
 			<p style={{ color: 'red' }}>
-      {T.translate("IMPORTANT NOTE: Festbot is NOT available on Viber right now, but will be available soon. If you still want to use Festbot now, please temporarly use Kik Messenger instead. You will be notified once Festbot will be available on Viber, and all of your personal data could be easily trasfered to Viber.")}
+      {T.translate("IMPORTANT NOTE: Festbot is NOT available on Viber right now, but will be available soon. If you still want to use Festbot now, please use Facebook Messenger instead. You will be notified once Festbot will be available on Viber, and all of your personal data could be easily trasfered to Viber.")}
 			</p>
 		</div>
 	));

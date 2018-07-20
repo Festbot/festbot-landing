@@ -8,6 +8,8 @@ import Layout from './hoc/Layout/Layout.jsx';
 
 import classes from './App.css';
 
+import 'babel-polyfill';
+
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import * as colors from 'material-ui/styles/colors';
@@ -16,6 +18,7 @@ import { BrowserRouter } from 'react-router-dom';
 import LandingPageContainer from './containers/www/LandingPage/LandingPageContainer.jsx';
 import PartnerLandingPageContainer from './containers/www/LandingPage/PartnerLandingPageContainer.jsx';
 import ArtistBrowserContainer from './containers/www/ArtistBrowser/ArtistBrowserContainer.jsx';
+import ProgramBrowserContainer from './containers/www/ProgramBrowser/ProgramBrowserContainer.jsx';
 import PrivacyPolicyContainer from './containers/www/PrivacyPolicy/PrivacyPolicyContainer.jsx';
 import GetStarted from './containers/www/Features/GetStarted.jsx';
 import VisibiltyControl from './hoc/VisibilityControl/VisibilityControl.jsx';
@@ -46,7 +49,8 @@ class App extends Component {
 						<PageInitTop>
 							<Route path="/" exact component={LandingPageContainer} />
 							<Route path="/partner" exact component={PartnerLandingPageContainer} />
-							<Route path="/artist" exact component={ArtistBrowserContainer} />
+							<Route path="/artist/:artist_name?" exact component={ArtistBrowserContainer}  />
+							<Route path="/festival_catalog" exact component={ProgramBrowserContainer}  />
 							<Route path="/privacy" exact component={PrivacyPolicyContainer} />
 							<Route path="/get_started" exact component={GetStarted} />
 						</PageInitTop>

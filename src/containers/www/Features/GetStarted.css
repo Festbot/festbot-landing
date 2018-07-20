@@ -1,14 +1,25 @@
 .container {
+	
 	width: 100%;
 	margin: 0px 0;
 	overflow: hidden;
 	background-color: black;
-	/box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+
 	position: relative;
 	transition: all 0.3s ease-in-out;
 	background-size: cover;
 	background-position: center center;
+
 }
+
+.contentContainer {
+	position: relative;
+	z-index: 1;
+	padding-top: 70px;
+	overflow: hidden;
+	
+}
+
 
 .content {
 	position: absolute;
@@ -42,6 +53,7 @@
 	order: 2;
 	padding: 20px;
 	padding-top: 10px;
+
 }
 
 .getStarted {
@@ -65,6 +77,7 @@ a{
 }
 
 .logoContainer{
+	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
   background-color: rgba(0, 0, 0, 0.7);
 	display: flex;
   align-items: center;

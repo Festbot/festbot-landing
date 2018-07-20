@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
-import { platformChange } from '../../../store/actions.js';
+import { platformChange } from '../../../store//actions/actions.js';
 
 import classes from './GetStarted.css';
 import * as T from '../../../helpers/i18n.js';
@@ -21,13 +21,12 @@ import PlatformDetails from './PlatformDetails.jsx'
 
 import VisibiltyControl from '../../../hoc/VisibilityControl/VisibilityControl.jsx';
 
-import iconLocation from '../../../assets/images/icon/place.svg';
 import { bindActionCreators } from 'redux';
 
 export class GetStarted extends Component {
 	render() {
 		return (
-			<div>
+			<div className={classes.contentContainer}>
 				<Helmet>
 					<title>Get Started</title>
 				</Helmet>
@@ -71,18 +70,21 @@ export class GetStarted extends Component {
 					</ContentBlockContainer>
 				</VisibiltyControl>
 
-				<VisibiltyControl effect="fade" always={true}>
+			
 					<ContentBlockContainer backgroundColor="#ddd" imageUrl="" height="" padding={'30px'}>
+					
 						<div className={classes.stepContainer}>
+						<VisibiltyControl effect="fade" always={true}>
 							<div className={classes.stepHeader}>
 								<div className={classes.stepCounter}>{T.translate("Step 1. Select your Messenger platform")}</div>
 							</div>
 							<div className={classes.stepContent} />
 							<PlatformMenu selectedPlatform={this.props.selectedPlatform} onChange={this.props.platformChange} />
               
-						</div>
+						
+						</VisibiltyControl></div>
 					</ContentBlockContainer>
-        </VisibiltyControl>
+        
         {(this.props.selectedPlatform!==T.translate('Available platforms'))&&<PlatformDetails platform={this.props.selectedPlatform} />}
 			</div>
 		);

@@ -5,42 +5,34 @@ import axios from 'axios';
 import ContentBlockWrapper from '../ContentBlock/ContentBlockWrapper.jsx';
 import VisibiltyControl from '../../../hoc/VisibilityControl/VisibilityControl.jsx';
 import * as T from '../../../helpers/i18n.js';
-// import IconHeadset from 'material-ui/svg-icons/hardware/headset';
-// import IconInfo from 'material-ui/svg-icons/action/event';
-// import Star from 'material-ui/svg-icons/toggle/star';
-// import StarBorder from 'material-ui/svg-icons/toggle/star-border';
-// import { IconButton } from 'material-ui';
 
-//import { Tabs, Tab } from 'material-ui/Tabs';
-// From https://github.com/oliviertassinari/react-swipeable-views
 import moment from 'moment';
 import 'babel-polyfill';
 
-export class ArtistDetails extends Component {
-	state = {
-		slideIndex: 0,
-		events: [],
-		artist: {
-			facebook: '',
-			website: '',
-			spotify: '',
-			genres: []
-		}
-	};
+import { getEventsByArtist } from './../../../helpers/eventApiHelper.js';
 
-	componentDidMount() {
-		this.updateArtistDetails();
-	}
+
+export class ArtistDetails extends Component {
+	constructor(props){
+		super(props)
+		this.state = {
+			activeArtist:this.props.artist.name,
+			events:[],
+			artist: {
+				facebook: '',
+				website: '',
+				spotify: '',
+				genres: []
+			}
+	}}
 
 	async updateArtistDetails() {
-		const { data } = await axios.post('https://api.festbot.com/artists/_find', { selector: { name: this.props.artist } });
-
-		this.setState({ artist: data.docs[0] });
-
-		const { data: eventData } = await axios.post('https://api.festbot.com/events/_find', { selector: { artist: this.props.artist } });
-
+		if ((this.state.activeArtist==this.props.artist.name)) return
+		const eventData = await getEventsByArtist(this.props.artist.name)
+		
 		this.setState({
-			events: eventData.docs.sort((eventA, eventB) => {
+			activeArtist:this.props.artist.name,
+			events: eventData.sort((eventA, eventB) => {
 				if (moment(eventA.startDate).isBefore(eventB.startDate)) return -1;
 				if (moment(eventB.startDate).isBefore(eventA.startDate)) return 1;
 				if (moment(eventB.startDate).isSame(eventA.startDate)) return 0;
@@ -51,11 +43,10 @@ export class ArtistDetails extends Component {
 	}
 
 	render() {
-		if (this.state.artist.name !== this.props.artist) {
-			this.updateArtistDetails();
-		}
 
-		const spotifyId = this.state.artist.spotify;
+		this.updateArtistDetails()
+
+		const spotifyId = this.props.artist.spotify;
 
 		const eventList = this.state.events.map((event, index) => {
 			return (
@@ -88,20 +79,20 @@ export class ArtistDetails extends Component {
 						<VisibiltyControl effect="zoom" always={true}>
 							<div style={{ padding: '16px 0' }}>
 								<div className={classes.detailsHeader}>{T.translate('On tour')} </div>
-								<div className={classes.detailsContent}>{this.props.artist ? eventList : null}</div>
+								<div className={classes.detailsContent}>{this.props.artist.name ? eventList : null}</div>
 
 								<div className={classes.detailsHeader} />
 								<div className={classes.detailsContent} style={{ margin: '5px' }}>
 									<p />
 									<p />
-									{this.state.artist.facebook && `Facebook: ${this.state.artist.facebook}`}
+									{this.state.artist.facebook && `Facebook: ${this.props.artist.facebook}`}
 									<p />
-									{this.state.artist.website && `${T.translate('Website:')} ${this.state.artist.website}`}
+									{this.state.artist.website && `${T.translate('Website:')} ${this.props.artist.website}`}
 
 									<p />
 									<div className={classes.detailsContentGenre}>
-										{this.state.artist.genres
-											? this.state.artist.genres.map((genre, index) => {
+										{this.props.artist.genres
+											? this.props.artist.genres.map((genre, index) => {
 													return (
 														<div key={index} className={classes.inverse}>
 															{genre}

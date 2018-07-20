@@ -37,7 +37,7 @@ export class FooterContainer extends Component {
 	footerControl = () => {
 		this.setState(prevState => ({
       watchDivHeight: this.footerDiv.getBoundingClientRect().height,
-      linkBarHeight: this.linkBarDiv.getBoundingClientRect().height
+
 		}));
 
 		const offsetY = window.scrollY + window.innerHeight;
@@ -64,11 +64,8 @@ export class FooterContainer extends Component {
         <div ref={el => (this.footerDiv = el)} style={{ opacity: this.state.opacity, transform: 'translateY(' + this.state.shiftY + 'px)' }} className={classes.footerContainer}>
 					<img className={classes.footerLogo} src={logoSmall} width="300px"/>
 					<div className={classes.titleText}>{T.translate('a personal assistant for the festival season')}</div>
-          <div style={{ height: this.state.linkBarHeight }} ></div>     
-        </div>
-
-        <div style={{ visibility: "hidden", transform: 'translateY(' + this.state.shiftY + 'px)', height: this.state.watchDivHeight }} className={classes.footerContainerForLinks}>
-					<div ref={el => (this.linkBarDiv = el)} className={classes.footerLinkBar} style={{visibility: "visible" , opacity: this.state.opacity}} >
+      
+					<div  className={classes.footerLinkBar}  >
 						<div className={classes.socialLinks}>
 							<a href="https://www.facebook.com/Festbot-1976488962678917/" target="_blank"><img style={{ width: '22px', color: '#232323',padding: '0 15px' }} src={facebookLogo} /></a>
 							<a href="https://www.instagram.com/festbot/" target="_blank"><img style={{ width: '22px', color: '#232323',padding: '0 15px'  }} src={instagramLogo} /></a>

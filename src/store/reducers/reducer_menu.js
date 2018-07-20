@@ -1,5 +1,5 @@
-import {UPDATE_PLATFORM} from './actionTypes.js'
-import * as T from '../helpers/i18n.js';
+import {UPDATE_PLATFORM} from '../actions/actionTypes.js'
+import * as T from '../../helpers/i18n.js';
 
 T.setLanguage();
 
