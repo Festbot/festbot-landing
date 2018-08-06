@@ -14,7 +14,7 @@ import VisibiltyControl from '../../../hoc/VisibilityControl/VisibilityControl.j
 export class LandingPageContainer extends Component {
 	render() {
 		return (
-			<div className={classes.contentContainer}>
+			<div className={classes.contentContainer}>	
 				<VisibiltyControl effect="fade">
 					<Hero
 						title={T.translate('Get the most out of the festival season')}
