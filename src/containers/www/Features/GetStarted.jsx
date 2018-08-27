@@ -43,13 +43,13 @@ export class GetStarted extends Component {
 								<CounterBlock title="14 " description="Festival" backgroundColor="rgba(0, 0, 0, 0.7)" textColor="white" />
 							</VisibiltyControl>
 							<VisibiltyControl effect="zoom" always={true}>
-								<CounterBlock title="1 475 " description="Program" backgroundColor="rgba(0, 0, 0, 0.7)" textColor="white" />
+								<CounterBlock title="1 982 " description="Program" backgroundColor="rgba(0, 0, 0, 0.7)" textColor="white" />
 							</VisibiltyControl>
 							<VisibiltyControl effect="zoom" always={true}>
-								<CounterBlock title="245 " description="POI" backgroundColor="rgba(0, 0, 0, 0.7)" textColor="white" />
+								<CounterBlock title="326 " description="POI" backgroundColor="rgba(0, 0, 0, 0.7)" textColor="white" />
 							</VisibiltyControl>
 							<VisibiltyControl effect="zoom" always={true}>
-								<CounterBlock title="1232 " description="Artist" backgroundColor="rgba(0, 0, 0, 0.7)" textColor="white" />
+								<CounterBlock title="1362 " description="Artist" backgroundColor="rgba(0, 0, 0, 0.7)" textColor="white" />
 							</VisibiltyControl>
 						</ContentBlockWrapper>
 
